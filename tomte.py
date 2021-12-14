@@ -1,5 +1,13 @@
-from os import path
 import time
+import os
+import random
+
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):
+        command = 'cls'
+    os.system(command)
+
 def new():
     filename = input("Please input file name: ")
     filename = filename + ".txt"
@@ -24,14 +32,22 @@ def read():
             print(line)
 
 def start():
+    while True:
+        load = "initializing"
+        time.sleep(1)
+        print(load)
+
     menuchoice = input("""
-    WishList9000.exe
 
-    >New List
+WishList9000.exe
 
-    >Read List
+>New List
 
-    Choose Option: [New/Read]
+>Read List
+
+Choose Option: [New/Read]
+
+©Santa Inc, 1987
 
     """)
 
