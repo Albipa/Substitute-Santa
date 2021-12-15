@@ -6,4 +6,4 @@
 
 ## Function
 
-    This program is able to make and read wishlists 
+    This program is able to make and read wishlists.
