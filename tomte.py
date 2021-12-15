@@ -1,12 +1,14 @@
-#Abion Paulsson
+#Abion Paulsson, Elliot Eriksson
 #TEINF-20
 #2021-12-15
 #Önskelist Skapare
 
+#imports neccesary features
 import time
 import os
 import random
 
+#Clears the console
 def clearconsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
@@ -39,6 +41,7 @@ def read():
 def naughty():
     clearconsole()
     with open(f"Python/Substitute-Santa/kolbarn.txt", "r", encoding="utf8") as f:
+        #Code courtesy of Elliot
         naughtylist=f.read().splitlines()
     
     print(f"Names already on the Naughty List: {naughtylist}\n")
