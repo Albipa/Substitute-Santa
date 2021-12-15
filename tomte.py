@@ -1,7 +1,11 @@
+#Abion Paulsson
+#TEINF-20
+#2021-12-15
+#Önskelist Skapare
+
 import time
 import os
 import random
-from typing import Collection
 
 def clearconsole():
     command = 'clear'
