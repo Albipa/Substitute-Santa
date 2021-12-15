@@ -32,29 +32,29 @@ def read():
             print(line)
 
 def start():
-    while True:
-        load = "initializing"
-        time.sleep(1)
+    load = ("Initializing")
+    for i in range(4):
         print(load)
+        load += "."
+        time.sleep(1)
+        clearConsole()
+    while True:
+        menuchoice = input("""
+| WishList9000.exe
+|
+| >New List
+|
+| >Read List
+|
+| ©Santa Inc, 1987
+|
+| Choose Option [New/Read/Quit]: """)
 
-    menuchoice = input("""
-
-WishList9000.exe
-
->New List
-
->Read List
-
-Choose Option: [New/Read]
-
-©Santa Inc, 1987
-
-    """)
-
-    if menuchoice.capitalize() == "New":
-        new()
-    elif menuchoice.capitalize() == "Read":
-        read()
-
+        if menuchoice.capitalize() == "New":
+            new()
+        elif menuchoice.capitalize() == "Read":
+            read()
+        elif menuchoice.capitalize() == "Quit":
+            os._exit()
 
 start()
