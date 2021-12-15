@@ -27,7 +27,7 @@ def read():
     clearconsole()
     filename = input("Please input file name: ")
     filename = filename + ".txt"
-    with open(f"{filename}", "r", encoding="utf8") as f:
+    with open(f"/{filename}", "r", encoding="utf8") as f:
     # f.read läser hela filen
     # f.readlines ger en lista med alla rader som element
     # f.readline ger en rad i taget
