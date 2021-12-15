@@ -13,7 +13,7 @@ def new():
     clearconsole()
     filename = input("Please input file name: ")
     filename = filename + ".txt"
-    with open(f"{filename}","w", encoding="utf8") as f:
+    with open(f"Python/Substitute-Santa/{filename}","w", encoding="utf8") as f:
         recievername = input("Please Input name of reciever: ")
         f.write(f"-List of {recievername}-\n")
         while True:
@@ -27,14 +27,34 @@ def read():
     clearconsole()
     filename = input("Please input file name: ")
     filename = filename + ".txt"
-    with open(f"/{filename}", "r", encoding="utf8") as f:
-    # f.read läser hela filen
-    # f.readlines ger en lista med alla rader som element
-    # f.readline ger en rad i taget
+    with open(f"Python/Substitute-Santa/{filename}", "r", encoding="utf8") as f:
         for line in f.readlines():
             print(line)
         input("Press enter to return ")
-        clearconsole()
+
+def naughty():
+    clearconsole()
+    with open(f"Python/Substitute-Santa/kolbarn.txt", "r", encoding="utf8") as f:
+        naughtylist=f.read().splitlines()
+    
+    print(f"Names already on the Naughty List: {naughtylist}\n")
+    
+    with open(f"Python/Substitute-Santa/kolbarn.txt", "a", encoding="utf8") as f:
+        while True:
+            name= input("Input a name to add to the naughty list, or quit: ")
+            if name == "quit":
+                break
+            else:
+                f.write(f"{name}\n")
+
+
+def naughtyread():
+    clearconsole()
+    print("Names on the Naughty list:\n")
+    with open(f"Python/Substitute-Santa/kolbarn.txt", "r", encoding="utf8") as f:
+        for line in f.readlines():
+            print(line)
+        input("Press enter to return. ")
 
 def start():
     clearconsole()
@@ -45,6 +65,7 @@ def start():
         time.sleep(1)
         clearconsole()
     while True:
+        clearconsole()
         menuchoice = input("""
 | WishList9000.exe
 |
@@ -52,14 +73,24 @@ def start():
 |
 | >Read List
 |
+| >Naughty List
+|
+| >Read Naughty List
+|
+| >Quit
+|
 | © Santa Inc, 1987
 |
-| Choose Option [New/Read/Quit]: """)
+| Choose Option [New/Read/Naughty/Naughtyread/Quit]: """)
 
         if menuchoice.capitalize() == "New":
             new()
         elif menuchoice.capitalize() == "Read":
             read()
+        elif menuchoice.capitalize() == "Naughty":
+            naughty()
+        elif menuchoice.capitalize() == "Naughtyread":
+            naughtyread()
         elif menuchoice.capitalize() == "Quit":
             os._exit()
 
